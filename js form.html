@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>login form</h1>
+    <form action="" id="login"></form>
+   <div id="register">
+    <h2>registration form</h2>
+    <form action="" class="registration"></form>
+   </div>
+    <script>
+      let email_input = document.createElement("input");
+      email_input.setAttribute("type", "email");
+      email_input.setAttribute("id", "email");
+      email_input.setAttribute("name", "email");
+      email_input.setAttribute("placeholder", "email");
+      login.appendChild(email_input);
+
+      let emails = document.getElementsByName("email")[0];
+      console.log(email_input);
+
+      let password_input = document.createElement("input");
+      password_input.setAttribute("type", "password");
+      password_input.setAttribute("class", "password");
+      password_input.setAttribute("name", "password");
+      password_input.setAttribute("placeholder", "password");
+      login.appendChild(password_input);
+
+      let passwords = document.getElementsByName("password")[0];
+      console.log(password_input);
+
+      let btn = document.createElement("button");
+    //   btn.setAttribute("id","btn")
+      btn.innerText = "submit";
+      login.appendChild(btn);
+
+      let btns = document.getElementsByTagName("button")[0];
+      console.log(btns)
+      let obj = {};
+      btns.addEventListener("click", function (e) {
+        e.preventDefault();
+        obj.email = emails.value
+        obj.password = passwords.value
+        emails.value = "";
+        passwords.value = "";
+        console.log(obj);
+        for(i in obj){
+            let para = document.createElement("p")
+            login.appendChild(para);
+            para.innerText=`your ${i} is:${obj[i]}`
+            
+        }
+      });
+    //  registration form
+    let first_name = document.createElement("input")
+      first_name.setAttribute("type", "text");
+      first_name.setAttribute("id", "text");
+      first_name.setAttribute("name", "text");
+      first_name.setAttribute("placeholder", "firstname");
+      register.appendChild(first_name);
+
+      let firstname = document.getElementsByName("text")[0]
+      console.log(firstname)
+
+      let last_name = document.createElement("input")
+      last_name.setAttribute("type", "name");
+      last_name.setAttribute("id", "name");
+      last_name.setAttribute("name", "name");
+      last_name.setAttribute("placeholder", "lastname");
+      register.appendChild(last_name);
+
+      let secondname = document.getElementsByName("name")[0]
+      console.log(secondname)
+
+      let phn_no = document.createElement("input")
+      phn_no.setAttribute("type","number")
+      phn_no.setAttribute("id","number")
+      phn_no.setAttribute("name","number") 
+      phn_no.setAttribute("placeholder","phn.no")
+      register.appendChild(phn_no)
+
+      let ph_no = document.getElementsByName("number")[0]
+      console.log(ph_no)
+
+      let email_id = document.createElement("input")
+      email_id.setAttribute("type","email")
+      email_id.setAttribute("id","emails")
+      email_id.setAttribute("name","emails") 
+      email_id.setAttribute("placeholder","email")
+      register.appendChild(email_id)
+
+      let emailid = document.getElementsByName("emails")[0]
+      console.log(emailid)
+
+      let password = document.createElement("input");
+      password.setAttribute("type", "password");
+      password.setAttribute("class", "passwords");
+      password.setAttribute("name", "passwords");
+      password.setAttribute("placeholder", "password");
+      register.appendChild(password);
+
+      let pass_word = document.getElementsByName("passwords")[0];
+      console.log(pass_word);
+
+      let btn2 = document.createElement("button");
+      btn2.innerText = "submit";
+      register.appendChild(btn2);
+      
+      let btns2 = document.getElementsByTagName("button")[1];
+      console.log(btns2)
+
+      let obj2 = {};
+      btns2.addEventListener("click", function (e) {
+        e.preventDefault();
+        obj2.first_name = firstname.value
+        obj2.last_name = secondname.value
+        obj2.email = emailid.value
+        obj2.password = pass_word.value
+        emailid.value = "";
+        pass_word.value = "";
+        console.log(obj2);
+        for(i in obj2){
+            let para2 = document.createElement("p")
+            register.appendChild(para2);
+            para2.innerText=`your ${i} is:${obj2[i]}`
+            
+        }
+      });
+    </script>
+  </body>
+</html>
